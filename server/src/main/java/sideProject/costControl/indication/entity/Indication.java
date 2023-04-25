@@ -45,7 +45,7 @@ public class Indication {
 
     private int content;
 
-    private String nurtrientImageUrl;
+    private String nutrientImageUrl;
 
     @OneToOne(mappedBy = "indication", cascade = CascadeType.ALL)
     private Recipe recipe;
