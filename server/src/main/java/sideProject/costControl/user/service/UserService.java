@@ -20,6 +20,7 @@ public class UserService {
     private UserRepository userRepository;
 
     public User createUser(User user) {
+        verifiedExistEmail(user.getEmail());
         return userRepository.save(user);
     }
 
@@ -54,5 +55,11 @@ public class UserService {
                 new BusinessLogicException(ExceptionCode.NOT_FOUND_EXCEPTION));
 
         return findUser;
+    }
+
+    public void verifiedExistEmail(String email) {
+        Optional<User> optionalUser = userRepository.findByEmail(email);
+        if(optionalUser.isPresent())
+            throw new BusinessLogicException(ExceptionCode.USER_EXISTS);
     }
 }
