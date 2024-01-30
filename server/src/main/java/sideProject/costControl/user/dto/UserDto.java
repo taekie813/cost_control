@@ -12,7 +12,6 @@ public class UserDto {
         private Long userId;
         private String name;
         private String nickName;
-        private String birth;
         private String email;
         private String password;
     }
@@ -23,7 +22,6 @@ public class UserDto {
         private Long userId;
         private String name;
         private String nickName;
-        private String birth;
         private String email;
 
         public void addUserId(Long userId) {
@@ -44,6 +42,8 @@ public class UserDto {
     @Setter
     @NoArgsConstructor
     public static class Response {
-
+        private String name;
+        private String nickName;
+        private String email;
     }
 }
