@@ -29,8 +29,6 @@ public class UserService {
 
         Optional.ofNullable(findUser.getNickName())
                 .ifPresent(findUser::setNickName);
-        Optional.ofNullable(findUser.getUserStatus())
-                .ifPresent(findUser::setUserStatus);
 
         return userRepository.save(findUser);
     }
