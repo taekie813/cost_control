@@ -12,11 +12,9 @@ public class UserDto {
     @AllArgsConstructor
     @NoArgsConstructor
     public static class Post {
-        private Long userId;
         private String name;
         private String nickName;
         private String email;
-        private String password;
     }
 
     @Getter
@@ -25,9 +23,7 @@ public class UserDto {
     @NoArgsConstructor
     public static class Patch {
         private Long userId;
-        private String name;
         private String nickName;
-        private String email;
 
         public void addUserId(Long userId) {
             this.userId = userId;
@@ -38,7 +34,7 @@ public class UserDto {
     @Setter
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class PasswordPatch {
+    public static class PatchPassword {
         private Long userId;
         private String currentPassword;
         private String nextPassword;

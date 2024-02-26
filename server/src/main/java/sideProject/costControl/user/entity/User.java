@@ -31,6 +31,9 @@ public class User {
 
     private String profileImageUrl;
 
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<String> roles = new ArrayList<>();
+
     @Enumerated(value = EnumType.STRING)
     @Column(nullable = false)
     UserStatus userStatus = UserStatus.USER_NEW;
